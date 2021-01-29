@@ -3,8 +3,8 @@
 <table class="table">
   <thead>
     <tr>
-    @foreach($columns as $column)
-      <th scope="col">{{ $column }}</th>
+    @foreach($columns as $column=>$columnValue)
+      <th scope="col">{{ $columnValue }}</th>
       @endforeach
 
     </tr>
@@ -17,6 +17,7 @@
       <td>{{ $booking->room }}</td>
       <td>{{ $booking->from_date }}</td>
       <td>{{ $booking->to_date }}</td>
+      <td><a href="{{ route('bookings.show', $booking->id) }}">Vai</a></td>
     </tr>
     @endforeach
   </tbody>

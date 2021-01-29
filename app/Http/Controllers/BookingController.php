@@ -59,7 +59,8 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $booking = Booking::find($id);
+        return view('bookings.show', compact('booking'));
     }
 
     /**
